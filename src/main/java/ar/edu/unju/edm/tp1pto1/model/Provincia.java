@@ -1,11 +1,16 @@
-package ar.unju.edu.tp1.model;
+package ar.edu.unju.edm.tp1pto1.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Provincia {
 	private int codigo;
 	private String nombre;
 	
-	public Provincia() {
-		
+	
+	public Provincia() {    //ctrl + espacio
+		//metodo constructor
+		// TODO Auto-generated constructor stub
 	}
 	
 	

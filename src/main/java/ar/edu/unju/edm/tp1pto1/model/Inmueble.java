@@ -1,4 +1,4 @@
-package ar.unju.edu.tp1.model;
+package ar.edu.unju.edm.tp1pto1.model;
 
 public class Inmueble {
 	
