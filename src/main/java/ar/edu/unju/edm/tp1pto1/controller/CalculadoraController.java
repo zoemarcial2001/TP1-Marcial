@@ -22,8 +22,7 @@ public class CalculadoraController {
 	
 
 	@GetMapping("/ejecutarsuma")
-	public ModelAndView getCalculoSuma(@RequestParam(name = "num1") String num1,
-			@RequestParam(name = "num2") int num2) {
+	public ModelAndView getCalculoSuma(@RequestParam(name = "num1") int num1, @RequestParam(name = "num2") int num2) {
 
 		unaCalculadora.setNum1(Integer.valueOf(num1));
 		unaCalculadora.setNum2(num2);
@@ -32,6 +31,20 @@ public class CalculadoraController {
 
 		ModelAndView modelView = new ModelAndView("resultado");
 		modelView.addObject("resultadoSuma", resultadoSuma);
+
+		return modelView;
+	}
+	
+	@GetMapping("/ejecutarresta")
+	public ModelAndView getCalculoResta(@RequestParam(name = "num1") int num1, @RequestParam(name = "num2") int num2) {
+
+		unaCalculadora.setNum1(num1);
+		unaCalculadora.setNum2(num2);
+
+		int resultadoResta = unaCalculadora.restar();
+
+		ModelAndView modelView = new ModelAndView("resultado");
+		modelView.addObject("resultadoResta", resultadoResta);
 
 		return modelView;
 	}
