@@ -48,4 +48,18 @@ public class CalculadoraController {
 
 		return modelView;
 	}
+	
+	@GetMapping("/ejecutarmultiplicacion")
+	public ModelAndView getCalculoMultiplicacion(@RequestParam(name = "num1") int num1, @RequestParam(name = "num2") int num2) {
+
+		unaCalculadora.setNum1(num1);
+		unaCalculadora.setNum2(num2);
+
+		int resultadoMultiplicacion = unaCalculadora.multiplicar();
+
+		ModelAndView modelView = new ModelAndView("resultado");
+		modelView.addObject("resultadoMultiplicacion", resultadoMultiplicacion);
+
+		return modelView;
+	}
 }
