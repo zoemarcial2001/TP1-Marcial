@@ -3,20 +3,45 @@ package ar.edu.unju.edm.tp1pto1.model;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Calculador {
+public class Calculadora {
 
 	private int num1;
 	private int num2;
 	
-	public Calculador() {
+	public Calculadora() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	public int sumar() {
-		return 
+		int suma;
+		suma=num1+num2;
+		return suma;
+	}
+	
+	public float dividir() {
+		float division=0;
+		if (num2==0) {
+			System.out.println("El segundo numero no puede ser 0");
+		}
+		else {
+			division=num1/num2;
+		}
+		return division;
+	}
+	
+	public int multiplicar() {
+		int multiplicacion;
+		multiplicacion=num1*num2;
+		return multiplicacion;
+	}
+	
+	public int restar() {
+		int resta;
+		resta=num1-num2;
+		return resta;
 	}
 
-	public Calculador(int num1, int num2) {
+	public Calculadora (int num1, int num2) {
 		super();
 		this.num1 = num1;
 		this.num2 = num2;
@@ -61,7 +86,7 @@ public class Calculador {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Calculador other = (Calculador) obj;
+		Calculadora other = (Calculadora) obj;
 		if (num1 != other.num1)
 			return false;
 		if (num2 != other.num2)
