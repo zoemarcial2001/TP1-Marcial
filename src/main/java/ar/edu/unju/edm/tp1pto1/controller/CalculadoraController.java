@@ -62,4 +62,18 @@ public class CalculadoraController {
 
 		return modelView;
 	}
+	
+	@GetMapping("/ejecutardivision")
+	public ModelAndView getCalculoDivision(@RequestParam(name = "num1") int num1, @RequestParam(name = "num2") int num2) {
+
+		unaCalculadora.setNum1(num1);
+		unaCalculadora.setNum2(num2);
+
+		float resultadoDivision = unaCalculadora.dividir();
+
+		ModelAndView modelView = new ModelAndView("resultado");
+		modelView.addObject("resultadoDivision", resultadoDivision);
+
+		return modelView;
+	}
 }
